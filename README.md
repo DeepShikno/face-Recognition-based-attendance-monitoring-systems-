@@ -51,24 +51,7 @@ pip install opencv-contrib-python numpy pandas pillow
 python main.py
 ```
 
-## Project Structure
 
-```
-├── main.py                    # Main application (GUI + recognition + attendance logic)
-├── StudentDetails.csv         # Registered people (ID, name)
-├── Attendance_<date>.csv      # Daily attendance log (auto-generated)
-├── install commands .txt      # Setup notes
-└── LICENSE
-```
-
-## My Contributions
-
-<!-- TODO: list only the things YOU actually changed or added, for example:
-- Reworked ... 
-- Added ...
--->
-
-## Credits
 
 <!-- TODO: if this project is based on another developer's open-source work, credit them here with a link
      to the original repository, and keep the LICENSE file. -->
