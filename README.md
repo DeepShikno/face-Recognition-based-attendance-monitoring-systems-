@@ -1,32 +1,78 @@
-# Face_recognition_based_attendance_system
-A python GUI integrated attendance system using face recognition to take attendance.
+# Face Recognition-Based Attendance Monitoring System
 
-In this python project, I have made an attendance system which takes attendance by using face recognition technique. I have also intergrated it with GUI (Graphical user interface) so it can be easy to use by anyone. GUI for this project is also made on python using tkinter.
+A Python desktop application that marks attendance automatically using real-time face recognition. It has a simple Tkinter GUI, so non-technical users can register people and take attendance from a webcam without touching code.
 
-TECHNOLOGY USED:
-1) tkinter for whole GUI
-2) OpenCV for taking images and face recognition (cv2.face.LBPHFaceRecognizer_create())
-3) CSV, Numpy, Pandas, datetime etc. for other purposes.
+## Features
 
-FEATURES:
-1) Easy to use with interactive GUI support.
-2) Password protection for new person registration.
-3) Creates/Updates CSV file for deatils of students on registration.
-4) Creates a new CSV file everyday for attendance and marks attendance with proper date and time.
-5) Displays live attendance updates for the day on the main screen in tabular format with Id, name, date and time.
+- **Real-time face recognition:** detects and identifies faces from a webcam feed using OpenCV's LBPH recognizer.
+- **Easy-to-use GUI:** the whole interface is built with Tkinter.
+- **Password-protected registration:** only authorized users can register new people or change the password.
+- **Student details management:** creates and updates a CSV file (`StudentDetails.csv`) when a new person is registered.
+- **Daily attendance logs:** automatically creates a new CSV file each day (for example `Attendance_27-11-2025.csv`) with ID, name, date, and timestamp.
+- **Live attendance view:** shows the day's attendance on the main screen in table form, updated as people are recognized (Pandas).
 
-# SCREENSHOTS
-MAIN SCREEN:
-![Screenshot (9)](https://user-images.githubusercontent.com/37211676/58502148-97ec2a00-81a3-11e9-963e-674b9c3e05dc.png)
+## Tech Stack
 
-TAKING ATTENDANCE:
-![Screenshot (10)](https://user-images.githubusercontent.com/37211676/58502149-97ec2a00-81a3-11e9-9658-8968da396c2e.png)
+| Area | Tools |
+|---|---|
+| Language | Python 3 |
+| GUI | Tkinter |
+| Face detection & recognition | OpenCV (`cv2.face.LBPHFaceRecognizer_create()`) |
+| Data handling | Pandas, NumPy, CSV, datetime |
 
-SHOWING ATTENDANCE TAKEN:
-![Screenshot (11)](https://user-images.githubusercontent.com/37211676/58502151-9884c080-81a3-11e9-9a90-fec29940ee5a.png)
+## How It Works
 
-HELP OPTION IN MENUBAR:
-![Screenshot (12)](https://user-images.githubusercontent.com/37211676/58502152-991d5700-81a3-11e9-861a-9115526010c2.png)
+1. **Register:** enter the ID and name (password required), and the app captures face images from the webcam.
+2. **Train:** the captured images are used to train the LBPH recognizer.
+3. **Take attendance:** the webcam identifies each face, and the app records the ID, name, date, and time in that day's CSV file.
+4. **Review:** the main screen displays the attendance recorded so far, and the CSV files can be opened in Excel or any spreadsheet tool.
 
-CHANGE PASSWORD OPTION:
-![Screenshot (13)](https://user-images.githubusercontent.com/37211676/58502146-97539380-81a3-11e9-8536-0c68160ecc55.png)
+## Getting Started
+
+### Prerequisites
+
+- Python 3.8 or later
+- A working webcam
+
+### Installation
+
+```bash
+git clone https://github.com/DeepShikno/face-Recognition-based-attendance-monitoring-systems-.git
+cd face-Recognition-based-attendance-monitoring-systems-
+pip install opencv-contrib-python numpy pandas pillow
+```
+
+> `opencv-contrib-python` is required because the LBPH recognizer lives in OpenCV's contrib module.
+> See `install commands .txt` in this repo for the original setup notes.
+
+### Run
+
+```bash
+python main.py
+```
+
+## Project Structure
+
+```
+├── main.py                    # Main application (GUI + recognition + attendance logic)
+├── StudentDetails.csv         # Registered people (ID, name)
+├── Attendance_<date>.csv      # Daily attendance log (auto-generated)
+├── install commands .txt      # Setup notes
+└── LICENSE
+```
+
+## My Contributions
+
+<!-- TODO: list only the things YOU actually changed or added, for example:
+- Reworked ... 
+- Added ...
+-->
+
+## Credits
+
+<!-- TODO: if this project is based on another developer's open-source work, credit them here with a link
+     to the original repository, and keep the LICENSE file. -->
+
+## License
+
+See the [LICENSE](LICENSE) file for details.
